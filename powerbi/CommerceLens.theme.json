@@ -1,0 +1,6 @@
+{
+  "name": "CommerceLens",
+  "dataColors": ["#2DD4BF", "#38BDF8", "#D4AF37", "#94A3B8", "#818CF8"],
+  "background": "#0F172A", "foreground": "#F1F5F9", "tableAccent": "#2DD4BF",
+  "textClasses": {"label": {"fontFace": "Segoe UI", "fontSize": 11}, "title": {"fontFace": "Segoe UI Semibold", "fontSize": 16}, "callout": {"fontFace": "Segoe UI Semibold", "fontSize": 28}}
+}

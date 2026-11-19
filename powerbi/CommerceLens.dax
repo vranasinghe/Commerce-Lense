@@ -1,0 +1,49 @@
+// All statuses unless explicitly labeled Delivered. Latest review per order. BRL.
+
+Total Orders =
+DISTINCTCOUNT('dm_customer_insights'[order_id])
+
+Orders With Items =
+DISTINCTCOUNT('dm_sales_performance'[order_id])
+
+Total Customers =
+DISTINCTCOUNT('dm_customer_insights'[customer_unique_id])
+
+Merchandise Value BRL =
+SUM('dm_sales_performance'[price])
+
+Total Freight BRL =
+SUM('dm_sales_performance'[freight_value])
+
+Gross Order Value BRL =
+[Merchandise Value BRL] + [Total Freight BRL]
+
+Total Payments BRL =
+SUM('dm_customer_insights'[payment_value])
+
+Average Order Value BRL =
+DIVIDE([Merchandise Value BRL], [Total Orders])
+
+Average Customer Rating =
+AVERAGE('dm_customer_insights'[review_score])
+
+Reviewed Orders =
+COUNT('dm_customer_insights'[review_score])
+
+Satisfied Orders =
+CALCULATE([Reviewed Orders], KEEPFILTERS('dm_customer_insights'[review_score] >= 4))
+
+Customer Satisfaction % =
+DIVIDE([Satisfied Orders], [Reviewed Orders])
+
+Merchandise MoM % =
+VAR PreviousValue = CALCULATE([Merchandise Value BRL], DATEADD('dim_date'[full_date], -1, MONTH)) RETURN IF(PreviousValue > 0, DIVIDE([Merchandise Value BRL] - PreviousValue, PreviousValue))
+
+Merchandise YoY % =
+VAR PreviousValue = CALCULATE([Merchandise Value BRL], DATEADD('dim_date'[full_date], -1, YEAR)) RETURN IF(PreviousValue > 0, DIVIDE([Merchandise Value BRL] - PreviousValue, PreviousValue))
+
+Repeat Customers =
+COUNTROWS(FILTER(VALUES('dm_customer_insights'[customer_unique_id]), CALCULATE(DISTINCTCOUNT('dm_customer_insights'[order_id])) > 1))
+
+Delivered Merchandise BRL =
+CALCULATE([Merchandise Value BRL], KEEPFILTERS('dm_customer_insights'[order_status] = "delivered"))

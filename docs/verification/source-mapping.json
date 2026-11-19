@@ -1,0 +1,108 @@
+{
+  "customers": {
+    "source": "olist_customers_dataset.csv",
+    "target": "dbo.bronze_customers",
+    "columns": {
+      "customer_id": "customer_id",
+      "customer_unique_id": "customer_unique_id",
+      "customer_zip_code_prefix": "customer_zip_code_prefix",
+      "customer_city": "customer_city",
+      "customer_state": "customer_state"
+    }
+  },
+  "orders": {
+    "source": "olist_orders_dataset.csv",
+    "target": "dbo.bronze_orders",
+    "columns": {
+      "order_id": "Copy of order_id",
+      "customer_id": "Copy of customer_id",
+      "order_status": "Copy of order_status",
+      "order_purchase_timestamp": "Copy of order_purchase_timestamp",
+      "order_approved_at": "Copy of order_approved_at",
+      "order_delivered_carrier_date": "Copy of order_delivered_carrier_date",
+      "order_delivered_customer_date": "Copy of order_delivered_customer_date",
+      "order_estimated_delivery_date": "Copy of order_estimated_delivery_date"
+    }
+  },
+  "order_items": {
+    "source": "olist_order_items_dataset.csv",
+    "target": "dbo.bronze_order_items",
+    "columns": {
+      "order_id": "Copy of order_id",
+      "order_item_id": "order_item_id",
+      "product_id": "Copy of product_id",
+      "seller_id": "Copy of seller_id",
+      "shipping_limit_date": "shipping_limit_date",
+      "price": "price",
+      "freight_value": "freight_value"
+    }
+  },
+  "products": {
+    "source": "olist_products_dataset.csv",
+    "target": "dbo.bronze_products",
+    "columns": {
+      "product_id": "Copy of product_id",
+      "product_category_name": "Copy of product_category_name",
+      "product_name_lenght": "product_name_lenght",
+      "product_description_lenght": "product_description_lenght",
+      "product_photos_qty": "product_photos_qty",
+      "product_weight_g": "product_weight_g",
+      "product_length_cm": "product_length_cm",
+      "product_height_cm": "product_height_cm",
+      "product_width_cm": "product_width_cm"
+    }
+  },
+  "sellers": {
+    "source": "olist_sellers_dataset.csv",
+    "target": "dbo.bronze_sellers",
+    "columns": {
+      "seller_id": "Copy of seller_id",
+      "seller_zip_code_prefix": "seller_zip_code_prefix",
+      "seller_city": "Copy of seller_city",
+      "seller_state": "Copy of seller_state"
+    }
+  },
+  "order_payments": {
+    "source": "olist_order_payments_dataset.csv",
+    "target": "dbo.bronze_order_payments",
+    "columns": {
+      "order_id": "Copy of order_id",
+      "payment_sequential": "payment_sequential",
+      "payment_type": "payment_type",
+      "payment_installments": "payment_installments",
+      "payment_value": "payment_value"
+    }
+  },
+  "order_reviews": {
+    "source": "olist_order_reviews_dataset.csv",
+    "target": "dbo.bronze_order_reviews",
+    "columns": {
+      "review_id": "Copy of review_id",
+      "order_id": "Copy of order_id",
+      "review_score": "review_score",
+      "review_comment_title": "review_comment_title",
+      "review_comment_message": "review_comment_message",
+      "review_creation_date": "review_creation_date",
+      "review_answer_timestamp": "review_answer_timestamp"
+    }
+  },
+  "geolocation": {
+    "source": "olist_geolocation_dataset.csv",
+    "target": "dbo.bronze_landing_geolocation",
+    "columns": {
+      "geolocation_zip_code_prefix": "\"geolocation_zip_code_prefix\"",
+      "geolocation_lat": "\"geolocation_lat\"",
+      "geolocation_lng": "\"geolocation_lng\"",
+      "geolocation_city": "\"geolocation_city\"",
+      "geolocation_state": "\"geolocation_state\""
+    }
+  },
+  "category_translation": {
+    "source": "product_category_name_translation.csv",
+    "target": "dbo.bronze_category_translation",
+    "columns": {
+      "product_category_name": "product_category_name",
+      "product_category_name_english": "product_category_name_english"
+    }
+  }
+}

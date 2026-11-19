@@ -1,0 +1,102 @@
+[
+  {
+    "visual": "3bd08fd15d4403a1d88c",
+    "old": "CountNonNull(dm_sales_performance.order_id)",
+    "measure": "Total Orders"
+  },
+  {
+    "visual": "3bd08fd15d4403a1d88c",
+    "old": "Sum(dm_sales_performance.freight_value)",
+    "measure": "Total Freight BRL"
+  },
+  {
+    "visual": "3bd08fd15d4403a1d88c",
+    "old": "Sum(dm_sales_performance.payment_value)",
+    "measure": "Merchandise Value BRL"
+  },
+  {
+    "visual": "63ac78910b45bbd02b07",
+    "old": "Sum(dm_sales_performance.total_order_value)",
+    "measure": "Merchandise Value BRL"
+  },
+  {
+    "visual": "90af3e30e6ed02e80baa",
+    "old": "Sum(dm_sales_performance.total_order_value)",
+    "measure": "Merchandise Value BRL"
+  },
+  {
+    "visual": "90af3e30e6ed02e80baa",
+    "old": "Min(dm_sales_performance.order_id)",
+    "measure": "Total Orders"
+  },
+  {
+    "visual": "dc5e939a4d2780974804",
+    "old": "Sum(dm_sales_performance.total_order_value)",
+    "measure": "Merchandise Value BRL"
+  },
+  {
+    "visual": "4dc6bbc75882a8020c03",
+    "old": "Sum(dm_sales_performance.review_score)",
+    "measure": "Average Customer Rating"
+  },
+  {
+    "visual": "7797bcc139ce9c88a934",
+    "old": "Sum(dm_sales_performance.total_order_value)",
+    "measure": "Merchandise Value BRL"
+  },
+  {
+    "visual": "8b884bd1c7b7b88d6490",
+    "old": "Sum(dm_sales_performance.total_order_value)",
+    "measure": "Merchandise Value BRL"
+  },
+  {
+    "visual": "b06b8a56da1c1d040d0a",
+    "old": "Min(dm_sales_performance.order_id)",
+    "measure": "Total Orders"
+  },
+  {
+    "visual": "b12b7f47a90ec0ccc802",
+    "old": "Sum(dm_sales_performance.total_order_value)",
+    "measure": "Merchandise Value BRL"
+  },
+  {
+    "visual": "b12b7f47a90ec0ccc802",
+    "old": "CountNonNull(dm_sales_performance.order_id)",
+    "measure": "Total Orders"
+  },
+  {
+    "visual": "2e42eeb750682778b339",
+    "old": "Min(dm_customer_insights.customer_unique_id)",
+    "measure": "Total Customers"
+  },
+  {
+    "visual": "33a65ace70d0e0917a4b",
+    "old": "Sum(dm_sales_performance.total_order_value)",
+    "measure": "Merchandise Value BRL"
+  },
+  {
+    "visual": "7df0ab35121d2dd4614d",
+    "old": "Min(dm_sales_performance.order_id)",
+    "measure": "Total Orders"
+  },
+  {
+    "visual": "87e34cd1a5db9cc41313",
+    "old": "Sum(dm_sales_performance.total_order_value)",
+    "measure": "Average Order Value BRL"
+  },
+  {
+    "visual": "aecaf6961d3000e1803b",
+    "old": "CountNonNull(dm_customer_insights.order_id)",
+    "measure": "Total Orders"
+  },
+  {
+    "visual": "aeff7e560b004b555615",
+    "old": "Sum(dm_sales_performance.total_order_value)",
+    "measure": "Merchandise Value BRL"
+  },
+  {
+    "visual": "f33d7c4a676e284193c7",
+    "old": "Sum(dm_sales_performance.total_order_value)",
+    "measure": "Merchandise Value BRL"
+  }
+]

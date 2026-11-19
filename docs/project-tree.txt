@@ -1,0 +1,224 @@
+CommerceLens delivered project (original directory name retained)
+Excluded local runtime/cache folders: .runtime, __pycache__, .pbi, .venv.
+Generated landing/processed data omitted below; evidence copies are under docs/verification.
+
+├── config/
+│   └── .env.example
+├── data/
+├── docs/
+│   ├── baseline/
+│   │   ├── desktop-export.zip
+│   │   ├── manifest.json
+│   │   ├── original-report.pbix
+│   │   ├── original-source.zip
+│   │   ├── report-layout.json
+│   │   └── sources.json
+│   ├── verification/
+│   │   ├── api-fetch-status.json
+│   │   ├── api-sql.txt
+│   │   ├── integration-sql.json
+│   │   ├── powerbi-model-parse.txt
+│   │   ├── powerbi-visual-changes.json
+│   │   ├── profile.json
+│   │   ├── python-tests.txt
+│   │   ├── source-mapping.json
+│   │   ├── source-reconciliation.json
+│   │   ├── sql-validation.txt
+│   │   └── unknown-date.json
+│   ├── architecture.md
+│   ├── change-report.md
+│   ├── data-dictionary.md
+│   ├── data-quality.md
+│   ├── olist_customers_dataset.csv
+│   ├── olist_geolocation_dataset.csv
+│   ├── olist_order_items_dataset.csv
+│   ├── olist_order_payments_dataset.csv
+│   ├── olist_order_reviews_dataset.csv
+│   ├── olist_orders_dataset.csv
+│   ├── olist_products_dataset.csv
+│   ├── olist_sellers_dataset.csv
+│   ├── pipeline-guide.md
+│   ├── powerbi-guide.md
+│   ├── product_category_name_translation.csv
+│   ├── project-tree.txt
+│   ├── ssis-guide.md
+│   └── verification.md
+├── powerbi/
+│   ├── CommerceLens.Report/
+│   │   ├── definition/
+│   │   │   ├── pages/
+│   │   │   │   ├── 0d18c37a7e37880264b3/
+│   │   │   │   │   ├── visuals/
+│   │   │   │   │   │   ├── 13bbde0f6e0e01d723a1/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 29d9dc3fb5b285c34004/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 2e42eeb750682778b339/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 32676da120c27b0a3e59/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 33a65ace70d0e0917a4b/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 3c646e4a0be1ce4a00dc/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 5d89cbf6da40d3860760/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 7df0ab35121d2dd4614d/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 87e34cd1a5db9cc41313/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── aecaf6961d3000e1803b/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── aeff7e560b004b555615/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── f22c3cc77ec73edd5560/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   └── f33d7c4a676e284193c7/
+│   │   │   │   │   │       └── visual.json
+│   │   │   │   │   └── page.json
+│   │   │   │   ├── 4775f92bc05633599059/
+│   │   │   │   │   ├── visuals/
+│   │   │   │   │   │   ├── 417f710faa1cb54d3579/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 4dc6bbc75882a8020c03/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 6633bcb309b686b25aa9/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 7797bcc139ce9c88a934/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 8b884bd1c7b7b88d6490/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── b06b8a56da1c1d040d0a/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── b12b7f47a90ec0ccc802/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── bd7d33750aee1089c980/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   └── e98c810f7615e090cd38/
+│   │   │   │   │   │       └── visual.json
+│   │   │   │   │   └── page.json
+│   │   │   │   ├── ceeb71b6446502b1738e/
+│   │   │   │   │   ├── visuals/
+│   │   │   │   │   │   ├── 0d9dd9500388541e04c0/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 3bd08fd15d4403a1d88c/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 63ac78910b45bbd02b07/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 83381c86800bc529091c/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 8bea00d207008e905385/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── 90af3e30e6ed02e80baa/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── c2e2453ae6820535c60b/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   ├── dc5e939a4d2780974804/
+│   │   │   │   │   │   │   └── visual.json
+│   │   │   │   │   │   └── f2bd9b78b40e18049955/
+│   │   │   │   │   │       └── visual.json
+│   │   │   │   │   └── page.json
+│   │   │   │   └── pages.json
+│   │   │   ├── report.json
+│   │   │   └── version.json
+│   │   ├── StaticResources/
+│   │   │   ├── RegisteredResources/
+│   │   │   │   ├── ChatGPT_Image_Sep_25,_2026,_079739063425387046.png
+│   │   │   │   ├── ChatGPT_Image_Sep_26,_2026,_01042139519876881915.png
+│   │   │   │   └── ChatGPT_Image_Sep_26,_2026,_018141328502912807.png
+│   │   │   └── SharedResources/
+│   │   │       └── BaseThemes/
+│   │   │           └── CY26SU05.json
+│   │   ├── .platform
+│   │   └── definition.pbir
+│   ├── CommerceLens.SemanticModel/
+│   │   ├── definition/
+│   │   │   ├── cultures/
+│   │   │   │   └── en-US.tmdl
+│   │   │   ├── tables/
+│   │   │   │   ├── DateTableTemplate_db6ea0f4-0e00-425f-9e88-b59d1874ab3e.tmdl
+│   │   │   │   ├── dim_date.tmdl
+│   │   │   │   ├── dm_customer_insights.tmdl
+│   │   │   │   ├── dm_sales_performance.tmdl
+│   │   │   │   ├── LocalDateTable_11823431-7ea5-423e-9728-be23a7e65c2c.tmdl
+│   │   │   │   ├── LocalDateTable_277bcdd3-57cd-475c-ad14-35228d3af455.tmdl
+│   │   │   │   └── LocalDateTable_2bb53ee8-38af-458a-8fca-c123e3a8342d.tmdl
+│   │   │   ├── database.tmdl
+│   │   │   ├── model.tmdl
+│   │   │   └── relationships.tmdl
+│   │   ├── .platform
+│   │   └── definition.pbism
+│   ├── CommerceLens.dax
+│   ├── CommerceLens.pbip
+│   ├── CommerceLens.theme.json
+│   ├── measures.json
+│   └── Olist_Ecommerce_Analytics.pbix
+├── python/
+│   ├── config.py
+│   ├── fetch_apis.py
+│   ├── load_api.py
+│   ├── load_olist.py
+│   ├── prepare_local_files.py
+│   ├── profile_data.py
+│   ├── reconcile_sources.py
+│   ├── run_sql.py
+│   └── sources.py
+├── sql/
+│   ├── bronze/
+│   │   └── initialize.sql
+│   ├── datamarts/
+│   │   ├── dm_customer_insights.sql
+│   │   ├── dm_sales_performance.sql
+│   │   ├── SQLQuery2.sql
+│   │   └── SQLQuery21.sql
+│   ├── gold/
+│   │   ├── dim_customers.sql
+│   │   ├── dim_date.sql
+│   │   ├── dim_products.sql
+│   │   ├── dim_sellers.sql
+│   │   ├── fact_order_summary.sql
+│   │   └── fact_orders.sql
+│   ├── migrations/
+│   │   └── 001_archive_legacy_fact.sql
+│   ├── silver/
+│   │   ├── transform_customers_bronze_to_silver.sql
+│   │   ├── transform_geolocation_bronze_to_silver.sql
+│   │   ├── transform_holidays_bronze_to_silver.sql
+│   │   ├── transform_order_items_bronze_to_silver.sql
+│   │   ├── transform_order_payments_bronze_to_silver.sql
+│   │   ├── transform_order_reviews_bronze_to_silver.sql
+│   │   ├── transform_orders_bronze_to_silver.sql
+│   │   ├── transform_products_bronze_to_silver.sql
+│   │   ├── transform_sellers_bronze_to_silver.sql
+│   │   ├── transform_states_regions_bronze_to_silver.sql
+│   │   └── transform_usd_brl_rates_bronze_to_silver.sql
+│   └── validation/
+│       └── validate_warehouse.sql
+├── ssis/
+│   └── Olist_ETL/
+│       ├── bin/
+│       │   └── Development/
+│       │       └── Olist_ETL.ispac
+│       ├── obj/
+│       │   └── Development/
+│       │       ├── Bronze_Orders.dtsx
+│       │       ├── BuildLog.xml
+│       │       ├── Olist_ETL.dtproj
+│       │       ├── Package.dtsx
+│       │       └── Project.params
+│       ├── Bronze_Orders.dtsx
+│       ├── Olist_ETL.database
+│       ├── Olist_ETL.dtproj
+│       ├── Olist_ETL.dtproj.user
+│       ├── Olist_ETL.slnx
+│       └── Project.params
+├── tests/
+│   ├── check_unknown_date.py
+│   ├── integration_sql.py
+│   ├── test_pipeline.py
+│   └── test_powerbi_project.py
+├── .gitignore
+├── README.md
+├── README.md.txt
+├── requirements-tested.txt
+└── requirements.txt

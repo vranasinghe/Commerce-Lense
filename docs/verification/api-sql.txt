@@ -1,0 +1,13 @@
+Changed database context to 'olist_dw'.
+dataset  rows       
+-------- -----------
+states            27
+holidays          42
+rates            750
+
+(3 rows affected)
+unsupported_bid_ask
+-------------------
+                  0
+
+(1 rows affected)

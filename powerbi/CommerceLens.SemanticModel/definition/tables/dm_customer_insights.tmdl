@@ -1,0 +1,158 @@
+table dm_customer_insights
+	lineageTag: cd4ca0ee-05fd-4e59-81d8-b63b79cb6d06
+
+	measure 'Total Orders' = DISTINCTCOUNT('dm_customer_insights'[order_id])
+		formatString: #,0
+		displayFolder: CommerceLens
+
+	measure 'Orders With Items' = DISTINCTCOUNT('dm_sales_performance'[order_id])
+		formatString: #,0
+		displayFolder: CommerceLens
+
+	measure 'Total Customers' = DISTINCTCOUNT('dm_customer_insights'[customer_unique_id])
+		formatString: #,0
+		displayFolder: CommerceLens
+
+	measure 'Merchandise Value BRL' = SUM('dm_sales_performance'[price])
+		formatString: "R$" #,0.00
+		displayFolder: CommerceLens
+
+	measure 'Total Freight BRL' = SUM('dm_sales_performance'[freight_value])
+		formatString: "R$" #,0.00
+		displayFolder: CommerceLens
+
+	measure 'Gross Order Value BRL' = [Merchandise Value BRL] + [Total Freight BRL]
+		formatString: "R$" #,0.00
+		displayFolder: CommerceLens
+
+	measure 'Total Payments BRL' = SUM('dm_customer_insights'[payment_value])
+		formatString: "R$" #,0.00
+		displayFolder: CommerceLens
+
+	measure 'Average Order Value BRL' = DIVIDE([Merchandise Value BRL], [Total Orders])
+		formatString: "R$" #,0.00
+		displayFolder: CommerceLens
+
+	measure 'Average Customer Rating' = AVERAGE('dm_customer_insights'[review_score])
+		formatString: 0.00
+		displayFolder: CommerceLens
+
+	measure 'Reviewed Orders' = COUNT('dm_customer_insights'[review_score])
+		formatString: #,0
+		displayFolder: CommerceLens
+
+	measure 'Satisfied Orders' = CALCULATE([Reviewed Orders], KEEPFILTERS('dm_customer_insights'[review_score] >= 4))
+		formatString: #,0
+		displayFolder: CommerceLens
+
+	measure 'Customer Satisfaction %' = DIVIDE([Satisfied Orders], [Reviewed Orders])
+		formatString: 0.0%
+		displayFolder: CommerceLens
+
+	measure 'Merchandise MoM %' = VAR PreviousValue = CALCULATE([Merchandise Value BRL], DATEADD('dim_date'[full_date], -1, MONTH)) RETURN IF(PreviousValue > 0, DIVIDE([Merchandise Value BRL] - PreviousValue, PreviousValue))
+		formatString: 0.0%
+		displayFolder: CommerceLens
+
+	measure 'Merchandise YoY %' = VAR PreviousValue = CALCULATE([Merchandise Value BRL], DATEADD('dim_date'[full_date], -1, YEAR)) RETURN IF(PreviousValue > 0, DIVIDE([Merchandise Value BRL] - PreviousValue, PreviousValue))
+		formatString: 0.0%
+		displayFolder: CommerceLens
+
+	measure 'Repeat Customers' = COUNTROWS(FILTER(VALUES('dm_customer_insights'[customer_unique_id]), CALCULATE(DISTINCTCOUNT('dm_customer_insights'[order_id])) > 1))
+		formatString: #,0
+		displayFolder: CommerceLens
+
+	measure 'Delivered Merchandise BRL' = CALCULATE([Merchandise Value BRL], KEEPFILTERS('dm_customer_insights'[order_status] = "delivered"))
+		formatString: "R$" #,0.00
+		displayFolder: CommerceLens
+
+	column order_id
+		dataType: string
+		lineageTag: 702c4ad0-a97b-4360-a77a-ab508e38d4b2
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_unique_id
+		dataType: string
+		lineageTag: b2e2ec77-faf8-4a7b-a951-7cd197775df4
+		summarizeBy: none
+		sourceColumn: customer_unique_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_city
+		dataType: string
+		lineageTag: c2ecc35c-d703-4a86-b252-4bb69c639f63
+		summarizeBy: none
+		sourceColumn: customer_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_state
+		dataType: string
+		lineageTag: dcf3edb0-a296-49c5-b7a6-386756a4ad47
+		summarizeBy: none
+		sourceColumn: customer_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e57b6801-bb18-4622-8f16-29e2bd36f641
+		summarizeBy: none
+		sourceColumn: purchase_date
+
+		variation Variation
+			isDefault
+			relationship: 91da4f81-e355-424d-ae38-1f0856ed43a2
+			defaultHierarchy: LocalDateTable_2bb53ee8-38af-458a-8fca-c123e3a8342d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column payment_value
+		dataType: double
+		lineageTag: 5530988a-25ae-4f1d-8a60-dd6a480963ae
+		summarizeBy: sum
+		sourceColumn: payment_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column review_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d57a5a2-0fa8-4d0c-9c71-efe78934aa7c
+		summarizeBy: sum
+		sourceColumn: review_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column satisfaction_category
+		dataType: string
+		lineageTag: fbef15ed-50b7-4124-98db-2ecbdf9f12fd
+		summarizeBy: none
+		sourceColumn: satisfaction_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: order_status
+
+	partition dm_customer_insights = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(".", "olist_dw"),
+				    dbo_dm_customer_insights = Source{[Schema="dbo",Item="dm_customer_insights"]}[Data]
+				in
+				    dbo_dm_customer_insights
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,18 @@
+test_failed_fetch_retains_files_and_reports_failure (test_pipeline.APITests.test_failed_fetch_retains_files_and_reports_failure) ... ok
+test_holiday_types_array (test_pipeline.APITests.test_holiday_types_array) ... ok
+test_partial_holiday_year_does_not_publish_partial_feed (test_pipeline.APITests.test_partial_holiday_year_does_not_publish_partial_feed) ... ok
+test_rate_is_single_value (test_pipeline.APITests.test_rate_is_single_value) ... ok
+test_all_sources_and_schemas (test_pipeline.SourceTests.test_all_sources_and_schemas) ... ok
+test_landing_roundtrip (test_pipeline.SourceTests.test_landing_roundtrip) ... ok
+test_preserved_original_assets (test_pipeline.SourceTests.test_preserved_original_assets) ... ok
+test_reconciliation (test_pipeline.SourceTests.test_reconciliation) ... ok
+test_reject_schema_drift (test_pipeline.SourceTests.test_reject_schema_drift) ... ok
+test_measure_references_exist (test_powerbi_project.ReportContractTests.test_measure_references_exist) ... ok
+test_one_to_many_order_and_common_date_contract (test_powerbi_project.ReportContractTests.test_one_to_many_order_and_common_date_contract) ... ok
+test_pages_and_container_ids_preserved (test_powerbi_project.ReportContractTests.test_pages_and_container_ids_preserved) ... ok
+test_resource_paths_exist (test_powerbi_project.ReportContractTests.test_resource_paths_exist) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 7.125s
+
+OK

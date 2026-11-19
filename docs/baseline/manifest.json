@@ -1,0 +1,190 @@
+{
+  ".gitignore": {
+    "bytes": 6,
+    "sha256": "bc4f94fc07ea35dc1ec0ea4239762293713abbb405081860ad88e45dfc4db5de"
+  },
+  "README.md.txt": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "docs\\olist_customers_dataset.csv": {
+    "bytes": 9033957,
+    "sha256": "983a422239e1712ded753b3bf9ecf47dc73f144d306029dcfa99e70a226883d2"
+  },
+  "docs\\olist_geolocation_dataset.csv": {
+    "bytes": 61273883,
+    "sha256": "b514f6fc991b9566aeba02aa5d67e2c3630f034b60a0e05aa0d082a3b66d88d6"
+  },
+  "docs\\olist_orders_dataset.csv": {
+    "bytes": 17654914,
+    "sha256": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf"
+  },
+  "docs\\olist_order_items_dataset.csv": {
+    "bytes": 15438671,
+    "sha256": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279"
+  },
+  "docs\\olist_order_payments_dataset.csv": {
+    "bytes": 5777138,
+    "sha256": "4f713964f2815dbbaa40b9488268c55aac3627bfce5aa96cf58d1f3616de3cc0"
+  },
+  "docs\\olist_order_reviews_dataset.csv": {
+    "bytes": 14346950,
+    "sha256": "81336b6e5183133b632a3d9ed899428e33430987fa540926a6daa8b4a2157598"
+  },
+  "docs\\olist_products_dataset.csv": {
+    "bytes": 2379446,
+    "sha256": "3e6569628a17fbc75fd206ee357b59e20364b9afa90f5b6cd5b4d624c58aa9cc"
+  },
+  "docs\\olist_sellers_dataset.csv": {
+    "bytes": 174703,
+    "sha256": "1f643d2b950373b85735e7794b20986f528d7a000432e7c6f9bcbb44d0846a0e"
+  },
+  "docs\\product_category_name_translation.csv": {
+    "bytes": 2542,
+    "sha256": "9da093e114e517534d7a6903b253b0d24a582830b99ea9e8ef48a90b79d60967"
+  },
+  "powerbi\\Olist_Ecommerce_Analytics.pbix": {
+    "bytes": 13609945,
+    "sha256": "82b597b233361fb42b4ff6e3f068a26e9627af41f061a1519387a63ab90ab027"
+  },
+  "python\\fetch_apis.py": {
+    "bytes": 1482,
+    "sha256": "16c8b081d46b12d6cc961e3c9c1401ca56e7a71d808dc7fe2d65f36fde111703"
+  },
+  "python\\load_olist.py": {
+    "bytes": 1461,
+    "sha256": "2a9b197ac6c65475d4028604fa7707c849b40b4165e31544914a11465a6c1fa0"
+  },
+  "python\\prepare_local_files.py": {
+    "bytes": 1141,
+    "sha256": "60b56c292c5df055e7c9ca41b67fb086771266679deff3247937baa538a79f5f"
+  },
+  "python\\profile_data.py": {
+    "bytes": 773,
+    "sha256": "a66f61f3c8e2d812fdcdfbbc3166b0c0e6d6ec3628134c0db529279a1c459fce"
+  },
+  "ssis\\Olist_ETL\\Bronze_Orders.dtsx": {
+    "bytes": 137054,
+    "sha256": "52b7c087c05aa9dd425e2c3a623d2d9698883d0d74a8cec104336bcb8201344b"
+  },
+  "ssis\\Olist_ETL\\Olist_ETL.database": {
+    "bytes": 1683,
+    "sha256": "509ce11213d96b55129af925c09f498bf098c72fea87b80ee8bcf9d0d682abaa"
+  },
+  "ssis\\Olist_ETL\\Olist_ETL.dtproj": {
+    "bytes": 98075,
+    "sha256": "d7656d2fa7c8f87c7b4533a93d9cbbcb2ed1a30db81a9af5291237268f62d526"
+  },
+  "ssis\\Olist_ETL\\Olist_ETL.dtproj.user": {
+    "bytes": 961,
+    "sha256": "c8ecf5375ef2acafaa94c916eafa4b32c88121747b5dec10ea11b4b0aa3b59d7"
+  },
+  "ssis\\Olist_ETL\\Olist_ETL.slnx": {
+    "bytes": 263,
+    "sha256": "28aeb0c618167e9ca2d2f522894242270ca1909c3e3c7a422bcf4e6e9d18a30c"
+  },
+  "ssis\\Olist_ETL\\Project.params": {
+    "bytes": 90,
+    "sha256": "9c00569a1b72c16ac143afd0febb28140d406d1a0a4985b4c5e16d16cb86c9c1"
+  },
+  "ssis\\Olist_ETL\\obj\\Development\\Bronze_Orders.dtsx": {
+    "bytes": 137051,
+    "sha256": "9ee649c1d7add7bcf8103434303c81831484a7afbc540b237bcf0b0057860771"
+  },
+  "ssis\\Olist_ETL\\obj\\Development\\BuildLog.xml": {
+    "bytes": 637,
+    "sha256": "7eb5bd1166ead695ef024c0ebae72377a7d4cf64714a73b56fe72337170ddc99"
+  },
+  "ssis\\Olist_ETL\\obj\\Development\\Olist_ETL.dtproj": {
+    "bytes": 98621,
+    "sha256": "4ccdb4fe794cfa72ae34abd34c913bde0ff061a3196d2ae087c6f785d8ae2caf"
+  },
+  "ssis\\Olist_ETL\\obj\\Development\\Package.dtsx": {
+    "bytes": 44462,
+    "sha256": "00b3defba165397f270dc7bde67dc6a93c5ec96f0fb3124e6fcce155de579a3f"
+  },
+  "ssis\\Olist_ETL\\obj\\Development\\Project.params": {
+    "bytes": 87,
+    "sha256": "9bce5f525d4a3aba1975d684837d40f1a6b3a01c9acbfbf3c6aa7f659a957e2a"
+  },
+  "ssis\\Olist_ETL\\bin\\Development\\Olist_ETL.ispac": {
+    "bytes": 16992,
+    "sha256": "b038b6c5cfaaed4f6097b71a792cc704394655ff719a9a64b880b83d844c34d9"
+  },
+  "sql\\datamarts\\dm_customer_insights.sql": {
+    "bytes": 843,
+    "sha256": "33bf215548c29785013ba3d8f30afa9776787f271ec89ca21eaae4032f3f6cf3"
+  },
+  "sql\\datamarts\\dm_sales_performance.sql": {
+    "bytes": 843,
+    "sha256": "2c6d782055e5e0d693effb0b492e7b7e5a53c306384c5af84fef2892c7d82d8e"
+  },
+  "sql\\datamarts\\SQLQuery2.sql": {
+    "bytes": 291,
+    "sha256": "39a56d22abbcfeaa60b3d2f7866f765ac25e03c4d3c995ebb133a37a15111886"
+  },
+  "sql\\datamarts\\SQLQuery21.sql": {
+    "bytes": 49,
+    "sha256": "6cd9c0da05b1a18c2eb13c7466b268e2e66a26ced031b1ae4b0abc3349236c86"
+  },
+  "sql\\gold\\dim_customers.sql": {
+    "bytes": 899,
+    "sha256": "4c9329d2e594564654d6ac3c0ef0c6692fd7a57a5a7a0426b920c9312ef19f83"
+  },
+  "sql\\gold\\dim_date.sql": {
+    "bytes": 1271,
+    "sha256": "8b750daf86c9a06a887cd181da8577f357091f5765f375373f1e1a5f02f1dbb0"
+  },
+  "sql\\gold\\dim_products.sql": {
+    "bytes": 1166,
+    "sha256": "b16626bf61eea933e8b08ba74c8130c5d1e0a95c48306fbef0b79d2c361f618a"
+  },
+  "sql\\gold\\dim_sellers.sql": {
+    "bytes": 736,
+    "sha256": "b80699d78ba0be4cf05933f5dd764582fbc3e1fb82680e8290ec7b3d2fcefaac"
+  },
+  "sql\\gold\\fact_orders.sql": {
+    "bytes": 1849,
+    "sha256": "ad77d6264a63fa4997c9a59dd40bd85a0a4e9433c7b061bcd7c37812cf5d9544"
+  },
+  "sql\\silver\\transform_customers_bronze_to_silver.sql": {
+    "bytes": 1058,
+    "sha256": "d6fabcb4a17004bcc5a990ac9bfc53112fc92e5fc78c4ada1ab6b75132e1e92e"
+  },
+  "sql\\silver\\transform_geolocation_bronze_to_silver.sql": {
+    "bytes": 1045,
+    "sha256": "5787dc98b825e10c9d9aa869468db401e12ee866179330d3284391c85bcbe664"
+  },
+  "sql\\silver\\transform_holidays_bronze_to_silver.sql": {
+    "bytes": 1198,
+    "sha256": "cf6d71078c728a172e0faed9de5e55f7e8c839356ec0f30a324e8aa4c484b64d"
+  },
+  "sql\\silver\\transform_orders_bronze_to_silver.sql": {
+    "bytes": 1489,
+    "sha256": "21e79cb1de6d0546cf581ea1e9344206c32d42d8b41b967f31a1c9d70625ed2b"
+  },
+  "sql\\silver\\transform_order_items_bronze_to_silver.sql": {
+    "bytes": 1095,
+    "sha256": "f453e0883b9f697429e2aec206c08871bfc5b9a30518b2b1e3b88ac093661bcd"
+  },
+  "sql\\silver\\transform_order_payments_bronze_to_silver.sql": {
+    "bytes": 963,
+    "sha256": "c729de013469a4a2f237ff50b2e7f43a476ad9b9b5af7df8d16dc54cf9dcbe8d"
+  },
+  "sql\\silver\\transform_order_reviews_bronze_to_silver.sql": {
+    "bytes": 1225,
+    "sha256": "034bd22977563c5f5a8bb2e35f15f53478277038db3bb971a130f524eea025a4"
+  },
+  "sql\\silver\\transform_products_bronze_to_silver.sql": {
+    "bytes": 1494,
+    "sha256": "d98be7e6507796576af6e051d4f6b568e7db274ce480f285de3c3233382f06d1"
+  },
+  "sql\\silver\\transform_sellers_bronze_to_silver.sql": {
+    "bytes": 805,
+    "sha256": "ca855b2f90ef3ed268bb990d4b922cb80201ec7ee3526bde6cccb4f686b9cd02"
+  },
+  "sql\\silver\\transform_usd_brl_rates_bronze_to_silver.sql": {
+    "bytes": 809,
+    "sha256": "1d4c768391771489cd46336baf9e460038157e5245a16fe9976911d9e418e3f5"
+  }
+}

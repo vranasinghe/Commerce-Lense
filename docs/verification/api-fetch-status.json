@@ -1,0 +1,20 @@
+{
+  "states_regions": {
+    "status": "success",
+    "rows": 27,
+    "sha256": "ac8a54535ed77d0b8b3acf6e6ba7439cc4e1dbcf584dcb7abe392d55bcd15070",
+    "fetched_utc": "2026-11-19T16:03:53.608016+00:00"
+  },
+  "holidays": {
+    "status": "success",
+    "rows": 42,
+    "sha256": "ac0e9bd7ffc01590fbc8f63ef0ad90c4c6c530c4d9cdfeae7f15d3591b125fb2",
+    "fetched_utc": "2026-11-19T16:03:54.485155+00:00"
+  },
+  "usd_brl_rates": {
+    "status": "success",
+    "rows": 750,
+    "sha256": "1b301ac2710f5e7b3337ffa2af184bf27ef25435f020f544655ce22f625c5f9a",
+    "fetched_utc": "2026-11-19T16:03:58.208375+00:00"
+  }
+}

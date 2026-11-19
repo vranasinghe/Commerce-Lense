@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "CommerceLens"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "76745f73-ed7c-451d-bf1b-7eeee48c01f3"
+  }
+}

@@ -1,0 +1,16 @@
+.vs/
+.vscode/
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*.log
+ssis/**/bin/
+ssis/**/obj/
+*.dtproj.user
+data/landing/
+data/processed/
+.runtime/
+**/.pbi/

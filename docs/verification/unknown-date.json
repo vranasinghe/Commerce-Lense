@@ -1,0 +1,6 @@
+{
+  "blank_bronze_timestamp_becomes_null": true,
+  "nullable_date_fk_accepted": true,
+  "item_rows_preserved_in_mart": 1,
+  "transaction_rolled_back": true
+}

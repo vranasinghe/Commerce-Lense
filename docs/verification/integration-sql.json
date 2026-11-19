@@ -1,0 +1,16 @@
+{
+  "malformed_bronze_rejected": true,
+  "failed_build_warehouse_unchanged": true,
+  "bronze_restored": true,
+  "identical_snapshot_rerun": true,
+  "counts": {
+    "silver_orders": 99441,
+    "silver_order_items": 112650,
+    "dim_customers": 99441,
+    "dim_products": 32951,
+    "dim_sellers": 3095,
+    "fact_orders": 112650,
+    "fact_payments": 103886,
+    "fact_reviews": 99224
+  }
+}

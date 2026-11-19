@@ -1,0 +1,111 @@
+table dim_date
+	dataCategory: Time
+	lineageTag: f5f05515-3b1d-4860-bc05-e74c8b530b4a
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 685282f3-2e84-4f43-86bf-1d16a7a39145
+		summarizeBy: sum
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_date
+		isKey
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b81b42da-c3bf-4ce2-bf43-083d404b5e78
+		summarizeBy: none
+		sourceColumn: full_date
+
+		variation Variation
+			isDefault
+			relationship: 636b0123-2798-4d3f-b03a-9d3ff4de4bee
+			defaultHierarchy: LocalDateTable_11823431-7ea5-423e-9728-be23a7e65c2c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column day_of_week
+		dataType: int64
+		formatString: 0
+		lineageTag: 6eb28427-0348-4ef2-bbb8-5eb7dfb6a99a
+		summarizeBy: sum
+		sourceColumn: day_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_name
+		dataType: string
+		lineageTag: fb8595ec-b2f2-4a96-a369-244c184e5f8b
+		summarizeBy: none
+		sourceColumn: day_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_month
+		dataType: int64
+		formatString: 0
+		lineageTag: ec2300e5-3311-4506-be43-19728c77f3b7
+		summarizeBy: sum
+		sourceColumn: day_of_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_number
+		dataType: int64
+		formatString: 0
+		lineageTag: ff3e19d5-ba02-4976-8728-4f945956cac2
+		summarizeBy: sum
+		sourceColumn: month_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_name
+		sortByColumn: month_number
+		dataType: string
+		lineageTag: 36c1fa72-5a65-4c9a-873d-eff87f273d1b
+		summarizeBy: none
+		sourceColumn: month_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 20c9c824-9aef-4641-88cd-593c6c54fcdc
+		summarizeBy: sum
+		sourceColumn: quarter_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 942e8a4e-88ab-400a-a1fc-b572635c26cc
+		summarizeBy: sum
+		sourceColumn: year_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth = FORMAT('dim_date'[full_date], "yyyy-MM")
+		summarizeBy: none
+		sortByColumn: YearMonthKey
+
+	column YearMonthKey = YEAR('dim_date'[full_date]) * 100 + MONTH('dim_date'[full_date])
+		formatString: 0
+		summarizeBy: none
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(".", "olist_dw"),
+				    dbo_dim_date = Source{[Schema="dbo",Item="dim_date"]}[Data]
+				in
+				    dbo_dim_date
+
+	annotation PBI_ResultType = Table
+

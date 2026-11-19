@@ -1,0 +1,26 @@
+relationship 91da4f81-e355-424d-ae38-1f0856ed43a2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dm_customer_insights.purchase_date
+	toColumn: LocalDateTable_2bb53ee8-38af-458a-8fca-c123e3a8342d.Date
+
+relationship 636b0123-2798-4d3f-b03a-9d3ff4de4bee
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_date.full_date
+	toColumn: LocalDateTable_11823431-7ea5-423e-9728-be23a7e65c2c.Date
+
+relationship 71a2b48a-7c28-db76-b4c8-4c352105aabc
+	crossFilteringBehavior: bothDirections
+	toCardinality: one
+	fromColumn: dm_sales_performance.order_id
+	toColumn: dm_customer_insights.order_id
+
+relationship 4a08d3fe-05cc-459c-b2af-bce567976355
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dm_sales_performance.order_date
+	toColumn: LocalDateTable_277bcdd3-57cd-475c-ad14-35228d3af455.Date
+
+
+relationship CommerceLens_Purchase_Date
+	fromColumn: dm_customer_insights.purchase_date
+	toColumn: dim_date.full_date
+	joinOnDateBehavior: datePartOnly

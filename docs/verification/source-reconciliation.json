@@ -1,0 +1,153 @@
+{
+  "scope": "All source order statuses; BRL, no currency conversion",
+  "orders": 99441,
+  "items": 112650,
+  "payments": 103886,
+  "reviews": 99224,
+  "merchandise_brl": "13591643.7",
+  "freight_brl": "2251909.54",
+  "gross_brl": "15843553.24",
+  "payments_brl": "16008872.12",
+  "payment_minus_gross_brl": "165318.88",
+  "original_join_rows": 118310,
+  "original_join_merchandise_brl": "14273699.65",
+  "unique_customers": 96096,
+  "repeat_customers_all_statuses": 2997,
+  "orders_with_reviews": 98673,
+  "latest_review_average": 4.086386346822333,
+  "satisfied_reviewed_orders": 76046,
+  "order_status_counts": {
+    "delivered": 96478,
+    "shipped": 1107,
+    "canceled": 625,
+    "unavailable": 609,
+    "invoiced": 314,
+    "processing": 301,
+    "created": 5,
+    "approved": 2
+  },
+  "payment_difference_analysis": [
+    {
+      "order_status": "approved",
+      "classification": "matched",
+      "orders": 2,
+      "difference_brl": "0"
+    },
+    {
+      "order_status": "canceled",
+      "classification": "matched",
+      "orders": 459,
+      "difference_brl": "0"
+    },
+    {
+      "order_status": "canceled",
+      "classification": "no_items",
+      "orders": 164,
+      "difference_brl": "37337.87"
+    },
+    {
+      "order_status": "canceled",
+      "classification": "payment_above_gross",
+      "orders": 2,
+      "difference_brl": "32.01"
+    },
+    {
+      "order_status": "created",
+      "classification": "no_items",
+      "orders": 5,
+      "difference_brl": "688.1"
+    },
+    {
+      "order_status": "delivered",
+      "classification": "matched",
+      "orders": 95908,
+      "difference_brl": "0"
+    },
+    {
+      "order_status": "delivered",
+      "classification": "no_payment",
+      "orders": 1,
+      "difference_brl": "-143.46"
+    },
+    {
+      "order_status": "delivered",
+      "classification": "payment_above_gross",
+      "orders": 362,
+      "difference_brl": "3032.24"
+    },
+    {
+      "order_status": "delivered",
+      "classification": "payment_below_gross",
+      "orders": 207,
+      "difference_brl": "-200.76"
+    },
+    {
+      "order_status": "invoiced",
+      "classification": "matched",
+      "orders": 311,
+      "difference_brl": "0"
+    },
+    {
+      "order_status": "invoiced",
+      "classification": "no_items",
+      "orders": 2,
+      "difference_brl": "149.23"
+    },
+    {
+      "order_status": "invoiced",
+      "classification": "payment_above_gross",
+      "orders": 1,
+      "difference_brl": "0.01"
+    },
+    {
+      "order_status": "processing",
+      "classification": "matched",
+      "orders": 301,
+      "difference_brl": "0"
+    },
+    {
+      "order_status": "shipped",
+      "classification": "matched",
+      "orders": 1102,
+      "difference_brl": "0"
+    },
+    {
+      "order_status": "shipped",
+      "classification": "no_items",
+      "orders": 1,
+      "difference_brl": "77.73"
+    },
+    {
+      "order_status": "shipped",
+      "classification": "payment_above_gross",
+      "orders": 2,
+      "difference_brl": "6.91"
+    },
+    {
+      "order_status": "shipped",
+      "classification": "payment_below_gross",
+      "orders": 2,
+      "difference_brl": "-0.02"
+    },
+    {
+      "order_status": "unavailable",
+      "classification": "matched",
+      "orders": 6,
+      "difference_brl": "0"
+    },
+    {
+      "order_status": "unavailable",
+      "classification": "no_items",
+      "orders": 603,
+      "difference_brl": "124339.02"
+    }
+  ],
+  "orphans": {
+    "order_items.order_id": 0,
+    "order_payments.order_id": 0,
+    "order_reviews.order_id": 0,
+    "orders.customer_id": 0,
+    "order_items.product_id": 0,
+    "order_items.seller_id": 0
+  }
+}

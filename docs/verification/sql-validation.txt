@@ -1,0 +1,21 @@
+Changed database context to 'olist_dw'.
+DBCC execution completed. If DBCC printed error messages, contact your system administrator.
+merchandise_brl                          freight_brl                              gross_brl                                payments_brl                             payment_gross_difference_brl            
+---------------------------------------- ---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------------------------------
+                             13591643.70                               2251909.54                              15843553.24                              16008872.12                                165318.88
+order_status                                       orders               merchandise_brl                         
+-------------------------------------------------- -------------------- ----------------------------------------
+approved                                                              2                                   209.60
+delivered                                                         96478                              13221498.11
+created                                                               5                                      .00
+invoiced                                                            314                                 61526.37
+processing                                                          301                                 60439.22
+unavailable                                                         609                                  2007.69
+canceled                                                            625                                 95235.27
+shipped                                                            1107                                150727.44
+total_orders         unique_customers latest_review_average                    merchandise_aov_brl                     
+-------------------- ---------------- ---------------------------------------- ----------------------------------------
+               99441            96096                                 4.086386                               136.680480
+result                     
+---------------------------
+Warehouse assertions passed

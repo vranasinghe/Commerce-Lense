@@ -1,0 +1,173 @@
+table dm_sales_performance
+	lineageTag: a985a9a2-326f-4ea5-86a7-f4da894c4564
+
+	column order_id
+		dataType: string
+		lineageTag: 8578f0b7-51d5-435a-bbaa-d2911436f129
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b434449c-2c5d-4620-a5f2-a13ab4506df6
+		summarizeBy: none
+		sourceColumn: order_date
+
+		variation Variation
+			isDefault
+			relationship: 4a08d3fe-05cc-459c-b2af-bce567976355
+			defaultHierarchy: LocalDateTable_277bcdd3-57cd-475c-ad14-35228d3af455.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 47e6ee1b-a903-45d9-a3e6-1a67112e86e1
+		summarizeBy: sum
+		sourceColumn: year_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_name
+		sortByColumn: Month_Number
+		dataType: string
+		lineageTag: 0befac30-c2c2-4400-ae06-6c073d52baf5
+		summarizeBy: none
+		sourceColumn: month_name
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 3be7cffd-5267-442c-bbb6-8b20bc7211a8
+		summarizeBy: sum
+		sourceColumn: quarter_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_state
+		dataType: string
+		lineageTag: 966cfb36-98f8-44d4-aee5-34ce2d82a89a
+		summarizeBy: none
+		sourceColumn: customer_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_city
+		dataType: string
+		lineageTag: f68614e5-0b54-4f5c-ae4e-acb196cec799
+		summarizeBy: none
+		sourceColumn: customer_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_category_name
+		dataType: string
+		lineageTag: 282ede73-b36a-4324-836e-d8a244daabdf
+		summarizeBy: none
+		sourceColumn: product_category_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_state
+		dataType: string
+		lineageTag: 2a8d8bab-24b3-477c-b346-d4657554eaef
+		summarizeBy: none
+		sourceColumn: seller_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: decimal
+		lineageTag: 186a7c69-3e86-472f-8f53-f203aedc7c3a
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freight_value
+		dataType: decimal
+		lineageTag: d9952e18-6b8f-4edd-87df-e6d6cf397814
+		summarizeBy: sum
+		sourceColumn: freight_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_order_value
+		dataType: decimal
+		formatString: "R$" #,0.00
+		lineageTag: babf7381-ef27-45cf-8965-8dfbaed3a248
+		summarizeBy: sum
+		sourceColumn: total_order_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column payment_value
+		dataType: decimal
+		lineageTag: 993969bd-0f62-4334-8d1c-84d92b6a6713
+		summarizeBy: sum
+		sourceColumn: payment_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column review_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e14c526-b33e-4b64-b714-9cffe8064ed9
+		summarizeBy: sum
+		sourceColumn: review_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day_Name = FORMAT(dm_sales_performance[order_date], "dddd")
+		lineageTag: 38d5bce1-8215-4c6c-8200-ad22ca3d586b
+		summarizeBy: none
+		sortByColumn: Day_Number
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day_Number = WEEKDAY(dm_sales_performance[order_date], 2)
+		formatString: 0
+		lineageTag: d30a7bb8-91d6-4ed1-92b8-2c71592af8d0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Number = MONTH('dm_sales_performance'[order_date])
+		formatString: 0
+		summarizeBy: none
+
+	column Brazil_State = 'dm_sales_performance'[customer_state] & ", Brazil"
+		dataCategory: Place
+		summarizeBy: none
+
+	partition dm_sales_performance = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(".", "olist_dw"),
+				    dbo_dm_sales_performance = Source{[Schema="dbo",Item="dm_sales_performance"]}[Data]
+				in
+				    dbo_dm_sales_performance
+
+	annotation PBI_ResultType = Table
+
