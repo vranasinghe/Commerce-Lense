@@ -23,7 +23,11 @@ The project is a stabilization of the original IT3101 Olist DWBI coursework. The
 
 ## Demo video
 
-[![Watch the CommerceLens walkthrough on YouTube](docs/images/commercelens-banner.webp)](https://youtu.be/fqMp3b7j_TQ)
+<p align="center">
+  <a href="https://youtu.be/fqMp3b7j_TQ">
+    <img src="docs/images/commercelens-video-thumbnail.webp" alt="CommerceLens DWBI Project: full project explained on YouTube (SQL Server, ETL, Power BI)" width="100%">
+  </a>
+</p>
 
 **[Watch the project walkthrough on YouTube (unlisted)](https://youtu.be/fqMp3b7j_TQ)**: architecture, data model, pipeline and the Power BI report.
 
@@ -166,7 +170,7 @@ Reference APIs add 27 IBGE state/region records, 42 Brazilian holidays and 750 B
 ## Repository structure
 
 ```text
-Commerce_Lense/
+Commerce-Lense/
 ├── config/             # .env.example (documented environment variables)
 ├── data/               # Generated landing / processed artifacts (Git-ignored)
 ├── docs/               # Guides, source CSVs, baseline archive, verification evidence
@@ -193,8 +197,8 @@ Commerce_Lense/
 Clone the repository and run all commands from its root (the folder that contains `python/`, `sql/` and `powerbi/`).
 
 ```powershell
-git clone https://github.com/vranasinghe/Commerce_Lense.git
-cd Commerce_Lense
+git clone https://github.com/vranasinghe/Commerce-Lense.git
+cd Commerce-Lense
 ```
 
 ### Prerequisites
