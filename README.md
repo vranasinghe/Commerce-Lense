@@ -21,10 +21,17 @@ The project is a stabilization of the original IT3101 Olist DWBI coursework. The
 
 > **Note:** Read [docs/verification.md](docs/verification.md) before treating any report as refreshed or certified. The preserved `Olist_Ecommerce_Analytics.pbix` holds cached historical results and must not be presented as reconciled just because the database checks pass.
 
+## Demo video
+
+[![Watch the CommerceLens walkthrough on YouTube](docs/images/commercelens-banner.webp)](https://youtu.be/fqMp3b7j_TQ)
+
+**[Watch the project walkthrough on YouTube (unlisted)](https://youtu.be/fqMp3b7j_TQ)**: architecture, data model, pipeline and the Power BI report.
+
 ---
 
 ## Table of contents
 
+- [Demo video](#demo-video)
 - [Highlights](#highlights)
 - [Architecture](#architecture)
 - [Data model](#data-model)
@@ -159,7 +166,7 @@ Reference APIs add 27 IBGE state/region records, 42 Brazilian holidays and 750 B
 ## Repository structure
 
 ```text
-IT3101-Olist-DWBI-main/
+Commerce_Lense/
 ├── config/             # .env.example (documented environment variables)
 ├── data/               # Generated landing / processed artifacts (Git-ignored)
 ├── docs/               # Guides, source CSVs, baseline archive, verification evidence
@@ -183,7 +190,12 @@ IT3101-Olist-DWBI-main/
 
 ## Getting started
 
-Run all commands from this directory (the inner `IT3101-Olist-DWBI-main` folder).
+Clone the repository and run all commands from its root (the folder that contains `python/`, `sql/` and `powerbi/`).
+
+```powershell
+git clone https://github.com/vranasinghe/Commerce_Lense.git
+cd Commerce_Lense
+```
 
 ### Prerequisites
 
@@ -255,6 +267,15 @@ python python/run_sql.py --include-api
 
 Open `powerbi/CommerceLens.pbip` in Power BI Desktop and follow the [Power BI guide](docs/powerbi-guide.md). The project connects to local SQL Server `.` and database `olist_dw`. No credentials are stored in the repository.
 
+| Resource | Link |
+|---|---|
+| Report file (original, cached results) | [powerbi/Olist_Ecommerce_Analytics.pbix](powerbi/Olist_Ecommerce_Analytics.pbix) (open in Power BI Desktop) |
+| Live report (Power BI Service) | _Not published yet. Add the URL here after following [docs/powerbi-publish-guide.md](docs/powerbi-publish-guide.md)._ |
+| Dashboard export (PDF, 3 pages) | [docs/Olist_Ecommerce_Analytics.pdf](docs/Olist_Ecommerce_Analytics.pdf) |
+| Walkthrough video (unlisted) | [youtu.be/fqMp3b7j_TQ](https://youtu.be/fqMp3b7j_TQ) |
+
+> The `.pbix` holds cached values from the original model. Refresh it against the rebuilt warehouse before presenting its numbers as reconciled.
+
 | Page | Focus |
 |---|---|
 | **Executive Summary** | Merchandise, orders, customers and order-based AOV. |
@@ -267,26 +288,17 @@ See [Dashboard screenshots](#dashboard-screenshots) below.
 
 ## Dashboard screenshots
 
-<!--
-  Screenshots are not in the repository yet. To publish them:
-  1. Run the pipeline, refresh CommerceLens.pbip in Power BI Desktop and confirm the measures reconcile.
-  2. Export each page (File > Export > PNG, or take a screenshot) into docs/images/ using the names below.
-  3. Delete this comment block and the "pending" note under the heading.
+<p align="center"><img src="docs/images/dashboard-executive-summary.png" alt="Executive Summary page" width="100%"></p>
+<p align="center"><img src="docs/images/dashboard-trend-analysis.png" alt="Trend Analysis page" width="100%"></p>
+<p align="center"><img src="docs/images/dashboard-interactive-analysis.png" alt="Interactive Analysis page" width="100%"></p>
 
-  <p align="center"><img src="docs/images/dashboard-executive-summary.png" alt="Executive Summary page" width="100%"></p>
-  <p align="center"><img src="docs/images/dashboard-trend-analysis.png" alt="Trend Analysis page" width="100%"></p>
-  <p align="center"><img src="docs/images/dashboard-interactive-analysis.png" alt="Interactive Analysis page" width="100%"></p>
--->
-
-> **Screenshots pending.** Images will be added after the report is refreshed against the warehouse and its measures are reconciled. Until then no screenshot is shown, because the cached values in the original `.pbix` are not proof of the corrected model.
+> **Read before quoting these numbers.** The screenshots come from `powerbi/Olist_Ecommerce_Analytics.pbix` with **no slicers selected** and show cached results from the original model: revenue **$16.64M** and **98,666** orders, labelled in `$`. They are **not** the reconciled warehouse figures (99,441 orders; BRL 13,591,643.70 merchandise; BRL 15,843,553.24 gross; BRL 16,008,872.12 payments, all order statuses, see [Metrics and data quality](#metrics-and-data-quality)). The dataset is in Brazilian reais. Refresh the report against the rebuilt warehouse and replace these images before treating the dashboard values as certified.
 
 | Page | What it shows | Image file |
 |---|---|---|
-| **Executive Summary** | Headline merchandise, orders, customers and order-based AOV. | `docs/images/dashboard-executive-summary.png` |
-| **Trend Analysis** | Monthly merchandise, distinct orders and average rating. | `docs/images/dashboard-trend-analysis.png` |
-| **Interactive Analysis** | Matrix, Brazil map, category comparison and freight vs. merchandise scatter with slicers. | `docs/images/dashboard-interactive-analysis.png` |
-
-When adding images, state which slicer selection is active (or that none is) and that values are BRL, all order statuses.
+| **Executive Summary** | Revenue, orders, customers and average order value cards, top 5 categories, monthly revenue trend and customer satisfaction split. | `docs/images/dashboard-executive-summary.png` |
+| **Trend Analysis** | Monthly revenue and order volume, revenue by day of week and average review score by month. | `docs/images/dashboard-trend-analysis.png` |
+| **Interactive Analysis** | Category drill-down table, geographic map, category-to-state revenue and freight vs. payment scatter, with year / state / category / satisfaction slicers. | `docs/images/dashboard-interactive-analysis.png` |
 
 ## Metrics and data quality
 
@@ -316,7 +328,7 @@ These are source and SQL checks, not claims about unrefreshed visuals. More deta
 python -m unittest discover -s tests -v
 ```
 
-- 13 automated Python and report-contract tests (loaders, file round trips, API validation, Power BI project integrity).
+- 13 automated Python and report-contract tests (loaders, file round trips, API validation, Power BI project integrity). On a fresh clone `test_preserved_original_assets` fails until the SSIS project is built, because it expects a build output under `ssis/Olist_ETL/obj/` that is Git-ignored; the other 12 pass.
 - Opt-in SQL integration tests: failure injection with rollback, and NULL-date handling.
 - SQL assertions in `sql/validation/validate_warehouse.sql`.
 - `dtexec /Validate` on the SSIS package.
@@ -329,6 +341,8 @@ Executed results and the list of what was **not** certified are recorded in [doc
 - [Pipeline and recovery](docs/pipeline-guide.md)
 - [SSIS implementation](docs/ssis-guide.md)
 - [Power BI measures and migration](docs/powerbi-guide.md)
+- [Publishing the report to Power BI Service](docs/powerbi-publish-guide.md)
+- [Dashboard export (PDF)](docs/Olist_Ecommerce_Analytics.pdf)
 - [Data dictionary](docs/data-dictionary.md)
 - [Data quality](docs/data-quality.md)
 - [Audit and change register](docs/change-report.md)
